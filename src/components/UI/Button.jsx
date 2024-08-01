@@ -9,7 +9,7 @@ export default function Button({children,variant='primary',color='primary',class
     }
     return(
         
-        <button type="submit" className={`${classes} ${className}`}>
+        <button {...rest} className={`${classes} ${className}`}>
             {children}
         </button>
     )

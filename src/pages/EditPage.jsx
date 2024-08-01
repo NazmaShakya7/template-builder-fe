@@ -3,7 +3,7 @@ import Dashboard from "../components/Dashboard/Editing/Dashboard"
 
 export default function EditPage() {  
     return(
-        <div className="flex bg-gray-100 h-screen">
+        <div className="flex bg-white h-screen">
              <div className="lg:w-1/6 md:w-1/5 w-1/3 bg-white">
                 <SideBar/>
             </div>

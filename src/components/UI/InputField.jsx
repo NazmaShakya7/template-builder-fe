@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 
-const TextField = forwardRef(({type='text', label, name, required=false, errorMessage, ...rest},ref,) => 
+const InputField = forwardRef(({type='text', label, name, required=false, errorMessage, ...rest},ref,) => 
 {
     return(
     <div className="pb-8 flex flex-col">
@@ -13,4 +13,4 @@ const TextField = forwardRef(({type='text', label, name, required=false, errorMe
     )
 }
 )
-export default TextField
+export default InputField
