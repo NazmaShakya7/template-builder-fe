@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Form from "./Form";
 import Design from "./Design";
+import Scroll from "../../Shared/ScrollArea";
 export default function Dashboard({openTab}) {
     const formData = [
         {
@@ -29,18 +30,18 @@ export default function Dashboard({openTab}) {
           description: 'Learn More',
         },
         {
-            id: 6,
-            label: 'Secondary Button Text',
-            description: 'Learn More',
-          },
+          id: 6,
+          label: 'Secondary Button Text',
+          description: 'Learn More',
+        },
       ]
     return(
         <div className="flex ">
             <div className="w-2/3 ">
                 <Header/>
-                <div className=" py-5 px-11 h-full">
-                    {/* <Image/> */}
-                    <Form formData={formData}/>
+                <div className=" py-5 px-11 ">
+                      {/* <Image/> */}
+                      <Form formData={formData}/>
                 </div>
             </div>
             <div className="w-1/3">

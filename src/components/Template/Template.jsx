@@ -15,7 +15,7 @@ const templates = [
     { id: 8, title: "Template H", image: template4 },
   ];
 export default function Template() {
-    const [selectId,setSelect]=useState(0)
+    const [selectId,setSelect]=useState(1)
     function handleSelect(id){
         setSelect(id)
     }

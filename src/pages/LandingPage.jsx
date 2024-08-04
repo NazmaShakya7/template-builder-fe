@@ -1,6 +1,7 @@
 import Dashboard from "../components/Dashboard/Landing/Dashboard";
 import SideBar from "../components/Dashboard/Landing/Sidebar/SideBar";
 import { useState } from "react";
+import Scroll from "../components/Shared/ScrollArea";
 export default function LandingPage() {
     const [openTab,setOpenTab]= useState('All')  
     const tabs = [
@@ -16,7 +17,9 @@ export default function LandingPage() {
                 <SideBar tabs={tabs} openTab={openTab} setOpenTab={setOpenTab} />
             </div>
             <div className="lg:w-5/6 md:w-4/5 w-2/3" >
-                <Dashboard openTab={openTab}/>
+                <Scroll>
+                    <Dashboard openTab={openTab}/>
+                </Scroll>
             </div>
         </div>
     )

@@ -1,4 +1,5 @@
 import Button from "../../UI/Button"
+import FileInput from "../../UI/FileInput"
 import InputField from "../../UI/InputField"
 import { useForm } from "react-hook-form"
 export default function Form({formData}) {
@@ -6,6 +7,7 @@ export default function Form({formData}) {
     const onSubmit = (data) => console.log(data)
     return(
         <form onSubmit={handleSubmit(onSubmit)}>
+            <FileInput label={'Hero Image'}/>
             {
                 formData.map(data=>{
                     const fieldName = data.label.split(' ').join('');

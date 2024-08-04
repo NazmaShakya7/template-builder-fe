@@ -1,17 +1,25 @@
-import banner from "../../../assets/banner.png"
+import banner from "../../../assets/image2.png"
 import Button from "../../UI/Button"
 import Icon from "../../UI/Icon"
 import {PencilSvg} from "../../../assets/AllSvg"
+import { Arrow } from "../../../assets/AllSvg"
 import { Trash } from "../../../assets/AllSvg"
 export default function LandingCard() {
     return(
         <div className="bg-white p-4 rounded-3xl">
-            <div className="mb-2 relative group/item">
-                <img src={banner} className="rounded-2xl border border-primaryBorder h-40" alt="" />
-                <div className="bg-primary opacity-0 group-hover/item:opacity-60 top-0 left-0 absolute h-full w-full rounded-2xl flex flex-col justify-center items-center gap-y-1">
-                    <Button variant="bordered" className="border bg-white text-primaryLight px-6">Edit</Button>
-                    <Button variant="bordered" className="bg-transparent text-white ">Duplicate</Button>
+            <div className="mb-2 relative group/item cursor-pointer">
+                <div className="relative">
+                    <img src={banner} className="rounded-2xl border border-primaryBorder h-40" alt="" />
+                    <Button variant="bordered" className="bg-primaryBorder hover:scale-125 rounded-[5px] px-1.5 py-1.5 z-50 absolute top-2 right-2"><Arrow/></Button>
+                    <span className="text-[8px] py-0 px-1 bg-primaryBorder rounded-xl font-semibold text-primary absolute bottom-2 left-2 z-50">Updated 2 hours ago</span>
                 </div>
+                <div className="bg-primary opacity-0 group-hover/item:opacity-40 top-0 left-0 absolute h-full w-full rounded-2xl flex flex-col justify-center items-center gap-y-1">
+                </div>
+                <div className="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 group-hover/item:flex  hidden flex-col gap-2 absolute  ">
+                    <Button variant="bordered" className="border hover:scale-125 bg-white text-primaryLight px-6">Edit</Button>
+                    <Button variant="bordered" className="bg-none hover:scale-125 text-white underline">Duplicate</Button>
+                </div>
+                
             </div>
             <div className="align-baseline mt-3 mb-2">
                 <h1 className="font-bold inline">Lawyers Website</h1>
@@ -19,9 +27,9 @@ export default function LandingCard() {
             </div>
             <div className="align-baseline my-3">
                 <p className=" inline">/lawyers-website</p>
-                <Icon icon={<PencilSvg/>} className="float-right"/>
+                <Icon icon={<PencilSvg/>} className="float-right "/>
             </div>
-            <div className="flex mb-3 items-center">
+            <div className="flex mb-3 items-center ">
                 <div className="w-1/3">
                     <p>Category</p>
                 </div>
@@ -30,8 +38,8 @@ export default function LandingCard() {
                 </div>
             </div>
             <div className="flex gap-2 items-center justify-between">
-                <Button variant="bordered" className="border border-primaryLight  text-primaryLight px-6">Edit</Button>
-                <Button variant="bordered" className="border border-green-600 text-green-600 px-7">Published</Button>
+                <Button variant="bordered" className="border border-primaryLight hover:bg-primaryLight hover:text-white  text-primaryLight px-6">Edit</Button>
+                <Button variant="bordered" className="border border-green-600 hover:bg-green-600 hover:text-white text-green-600 px-7">Published</Button>
                 <Icon icon={<Trash/>} />
             </div>
         </div>
