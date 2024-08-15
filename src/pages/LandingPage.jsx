@@ -2,6 +2,7 @@ import Dashboard from "../components/Dashboard/Landing/Dashboard";
 import SideBar from "../components/Dashboard/Landing/Sidebar/SideBar";
 import { useState } from "react";
 import Scroll from "../components/Shared/ScrollArea";
+
 export default function LandingPage() {
     const [openTab,setOpenTab]= useState('All')  
     const tabs = [

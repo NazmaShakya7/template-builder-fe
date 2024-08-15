@@ -1,9 +1,13 @@
 import Header from "./Header";
 import Form from "./Form";
 import Design from "./Design";
-import Scroll from "../../Shared/ScrollArea";
-export default function Dashboard({openTab}) {
+export default function Dashboard({active,handleData}) {
     const formData = [
+        {
+          id: 11,
+          label: 'Hero Image URL',
+          description: '',
+        },
         {
           id: 1,
           label: 'Heading',
@@ -37,16 +41,16 @@ export default function Dashboard({openTab}) {
       ]
     return(
         <div className="flex ">
-            <div className="w-2/3 ">
+            <div className="w-full ">
                 <Header/>
                 <div className=" py-5 px-11 ">
                       {/* <Image/> */}
-                      <Form formData={formData}/>
+                      <Form  active={active} handleData={handleData}/>
                 </div>
             </div>
-            <div className="w-1/3">
+            {/* <div className="w-1/3">
                 <Design/>
-            </div>
+            </div> */}
         </div>
     )
 }

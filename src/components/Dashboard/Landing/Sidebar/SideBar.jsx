@@ -3,15 +3,28 @@ import Button from "../../../UI/Button"
 import { PencilSvg, Trash } from "../../../../assets/AllSvg";
 import { Link } from "react-router-dom";
 import { LeftPointer } from "../../../../assets/AllSvg";
-export default function SideBar({tabs='',openTab='',setOpenTab='',view}) {
+import Popup from "../Modal";
+export default function SideBar({}) {
+    const [open, setOpen] = useState(false);
+    const showModal = () => {
+        setOpen(true);
+    };
+    const handleOk = () => {
+        setOpen(false);
 
+    };
+    const handleCancel = () => {
+        console.log('Clicked cancel button');
+        setOpen(false);
+    };
     return(
         <div className="py-9 px-5 relative h-screen">
       
-                <Button variant='bordered' className="bg-white border border-primary hover:bg-primary hover:text-white   text-primary w-full mb-8">
+                <Button variant='bordered' onClick={showModal} className="bg-white border border-primary hover:bg-primary hover:text-white   text-primary w-full mb-8">
                     Create New Website
                 </Button>
-            <div className="mb-5">
+                <Popup open={open} handleOk={handleOk} handleCancel={handleCancel}  />
+            {/* <div className="mb-5">
                 <ul>
                 {
                     tabs.map((category)=>{
@@ -29,7 +42,7 @@ export default function SideBar({tabs='',openTab='',setOpenTab='',view}) {
                     })
                 }
                 </ul>
-            </div>
+            </div> */}
             <div className='absolute bottom-0 left-0 w-full bg-white z-40 py-6  px-5 '>
             <Link to='/' className='group text-blackText hover:text-primaryLight transition ease-in-out duration-75 flex gap-2 items-center cursor-pointer'>
                 <LeftPointer className={'group-hover:scale-125'}/> Logout

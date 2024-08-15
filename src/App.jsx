@@ -7,9 +7,10 @@ import CreateTemplate from './pages/CreateTemplate'
 import {ConfigProvider, Space } from 'antd';
 import LandingPage from './pages/LandingPage'
 import EditPage from './pages/EditPage'
+import { useAuthContext } from './context/authContext'
 
 function App() {
-
+  const {auth}=useAuthContext()
   return (
   <ConfigProvider
     theme={{
@@ -20,11 +21,16 @@ function App() {
   >
       <Routes>
         <Route path='/login' element={<AuthPage/>} />
-        <Route path='/select-template' element={<SelectTemplate/>} />
-        <Route path='/create-template' element={<CreateTemplate/>}/>
-        <Route path='/' element={<LandingPage/>}/>
-        <Route path='/edit' element={<EditPage/>}/>
+        {/* {auth?.accessToken ? ( */}
+          <>
+            <Route path='/select-template' element={<SelectTemplate/>} />
+            <Route path='/create-template' element={<CreateTemplate/>}/>
+            <Route path='/' element={<LandingPage/>}/>
+            <Route path='/edit/:id' element={<EditPage/>}/>
+          </>
+          {/* ) : ( 
         <Route path='*' element={<Navigate to={"/login"}/>} />
+        )} */}
       </Routes>
   </ConfigProvider>
 
