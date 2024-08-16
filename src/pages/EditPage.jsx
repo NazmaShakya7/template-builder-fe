@@ -46,6 +46,9 @@ export default function EditPage() {
         }
     }
     }
+    const handleCreate=()=>{
+      console.log("hi")
+    }
     const handleData = (data)=>{
       setSectionData(data)
     }
@@ -55,7 +58,7 @@ export default function EditPage() {
              <div className="lg:w-1/6 md:w-1/5 w-1/3 bg-white">
               {isLoading ? 
               <p>Loading....</p> :
-              <SideBar handleActive={handleActive} nav={nav} active={active} handleUpdate={handleUpdate}/>
+              <SideBar handleActive={handleActive} nav={nav} active={active} handleUpdate={handleUpdate} handleCreate={handleCreate}/>
             }
             </div>
             <div className="lg:w-5/6 md:w-4/5 w-2/3" >

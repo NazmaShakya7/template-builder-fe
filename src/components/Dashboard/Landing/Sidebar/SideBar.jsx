@@ -21,7 +21,7 @@ export default function SideBar({}) {
         <div className="py-9 px-5 relative h-screen">
       
                 <Button variant='bordered' onClick={showModal} className="bg-white border border-primary hover:bg-primary hover:text-white   text-primary w-full mb-8">
-                    Create New Website
+                    Create New Company
                 </Button>
                 <Popup open={open} handleOk={handleOk} handleCancel={handleCancel}  />
             {/* <div className="mb-5">

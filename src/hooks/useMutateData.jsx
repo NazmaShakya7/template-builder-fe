@@ -25,4 +25,7 @@ export const useCompanyDeleteMutation = idx =>
   useMutateData(`company/${idx}`, 'DELETE');
 
 export const useSectionMutation = (idx, sectionIdx,method) =>
-    useMutateData([`template`, idx, sectionIdx], `template/${idx}/section/${sectionIdx}`,method);
+    useMutateData(`template/${idx}/section/${sectionIdx}`,method);
+
+export const useSectionCreateMutation = (idx) => 
+    useMutateData(`template/${idx}/section/new`);
